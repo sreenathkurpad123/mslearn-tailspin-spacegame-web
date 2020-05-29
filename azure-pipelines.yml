@@ -20,6 +20,10 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
+    
+- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
+displayName: 'Write build info'
+workingDirectory: Tailspin.SpaceGame.Web/wwwroot
 
 - task: VSBuild@1
   inputs:
