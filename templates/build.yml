@@ -1,6 +1,7 @@
 parameters:
   buildConfiguration: 'Release'
 
+steps:
 - task: VSBuild@1
   displayName: 'Build the project - ${{ parameters.buildConfiguration }}'
   inputs:
